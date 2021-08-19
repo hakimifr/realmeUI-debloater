@@ -210,6 +210,7 @@ checkadb () {
         exit
     else
         echo "Enter a valid input."
+        echo "Returning to menu in 3 seconds."
         sleep 3s
         checkadb
     fi
@@ -229,6 +230,7 @@ donedebloat () {
         exit
     else
         echo "Enter a valid input."
+        echo "Returning to menu in 3 seconds."
         sleep 3s
         donedebloat
     fi
@@ -274,6 +276,7 @@ mainmenu () {
         exit
     else
         echo "Enter a valid input."
+        echo "Returning to menu in 3 seconds."
         sleep 3s
         mainmenu
     fi
