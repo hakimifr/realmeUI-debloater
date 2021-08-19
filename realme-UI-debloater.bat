@@ -4,7 +4,7 @@ color 1c
 :menu
 cls
 echo -----------------------------------------------------------------------------------------------------------
-echo lalalalala this is a cheaply made script feel free to modify it of something is wrong kek
+echo lalalalala this is a cheaply made script feel free to modify it if something is wrong kek
 echo please make sure you place this file in platform tools folder
 echo else it will return 'adb' is not recognized as an internal or external command,
 echo operable program or batch file. error.
