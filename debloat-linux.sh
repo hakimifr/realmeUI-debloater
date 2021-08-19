@@ -241,9 +241,8 @@ mainmenu () {
     mode=0
     echo "-----------------------------------------------------------------------------------------------------------"
     echo "lalalalala this is a cheaply made script feel free to modify it if something is wrong kek"
-    echo "please make sure you place this file in platform tools folder"
-    echo "else it will return 'adb' is not recognized as an internal or external command,"
-    echo "operable program or batch file. error."
+    echo "please make sure you've installed adb on your linux system."
+    echo "search on google how to do that."
     echo "com.coloros.weather.service will not be debloated to prevent realme UI 2.0 user from softlocking their phone."
     echo "com.oppo.ota and com.oppo.otaui will also be excluded to make sure you can still receive ota."
     echo "happy debloating"
