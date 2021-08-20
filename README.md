@@ -3,10 +3,11 @@ Dear realme users, please stop debloating `com.coloros.weather.service` to preve
 ~~I made this debloater script to autamate debloat process for Windows user.~~
 
 ## How to Use
-**For linux user**, [click here to download the shell file.](https://github.com/Hakimi0804/realmeUI-debloater/raw/main/debloat-linux.sh)
-**For Windows user**, [click here to download the batch file.](https://github.com/Hakimi0804/realmeUI-debloater/raw/main/realme-UI-debloater.bat)
+**For linux user**, [click here to download the shell script file](https://github.com/Hakimi0804/realmeUI-debloater/raw/main/debloat-linux.sh).
 
-Simply execute the file and you're good to go!
+**For Windows user**, [click here to download the batch file](https://github.com/Hakimi0804/realmeUI-debloater/raw/main/realme-UI-debloater.bat).
+
+Simply execute the file, follow the instructions given, and you're good to go!
 
 ## Side Notes
 - well ok i added script for linux user.
