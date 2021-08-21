@@ -1,6 +1,5 @@
 # realme UI Debloater
 Dear realme users, please stop debloating `com.coloros.weather.service` to prevent lock screen flicker OK? Thank you for your notice.
-~~I made this debloater script to autamate debloat process for Windows user.~~
 
 ## How to Use
 **For linux user**, [click here to download the shell script file](https://github.com/Hakimi0804/realmeUI-debloater/raw/main/debloat-linux.sh).
