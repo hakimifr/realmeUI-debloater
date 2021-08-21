@@ -4,8 +4,19 @@ Dear realme users, please stop debloating `com.coloros.weather.service` to preve
 
 ## How to Use
 **For linux user**, [click here to download the shell script file](https://github.com/Hakimi0804/realmeUI-debloater/raw/main/debloat-linux.sh).
-I'm pretty sure linux user are tech savvy enough to use this. If not, contact me on [discord](https://discord.gg/y4QjYY5WJE) or [telegram](t.me/Hakimi0804).
-Or wait for me to write a guide.
+How to use?
+- Setting up platform-tools:
+  1. Do a Google search on how to set up adb and fastboot for your linux distro.
+     For example:
+         Fedora: `sudo dnf install android-tools`
+         Ubuntu: `sudo apt install adb fastboot` (side note: this will install a slightly outdated version of adb and fastboot. I'll soon upload script for you guys to install latest version of adb and fastboot to your Ubuntu system.)
+ 
+ - Executing the script: 
+  1. Launch terminal. Navigate to the folder where the script are.
+  2. To run the script, first you need to give execute permission.
+     `chmod +x debloat-linux.sh`
+  3. Execute the script.
+     `./debloat-linux.sh`
 
 **For Windows user**, [click here to download the batch file](https://github.com/Hakimi0804/realmeUI-debloater/raw/main/realme-UI-debloater.bat).
 How to use?
@@ -19,7 +30,7 @@ How to use?
      `adb devices` (check your phone, there should be a prompt asking you to grant USB debugging. Tick always allow and press allow.)
   6. Enter in `adb devices` again to check if your device is authorised. If you see `SERIAL_NUMBER  DEVICE` on cmd, congratulations, you've done the setup properly.
 
-- Running the script
+- Executing the script:
   1. [Download](https://github.com/Hakimi0804/realmeUI-debloater/raw/main/realme-UI-debloater.bat) the script and copy it to the platform-tools folder.
   2. From the platform-tools folder, double click the script. A cmd window should show up. Do as the prompt say, select mode that you want.
   3. That's it! Have fun debloating all those crap!
