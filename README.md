@@ -41,7 +41,6 @@ How to use?
   2. From the platform-tools folder, double click the script. A cmd window should show up. Do as the prompt say, select mode that you want.
   3. That's it! Have fun debloating all those crap!
 
-Simply execute the file, follow the instructions given, and you're good to go!
 
 ## Side Notes
 - well ok i added script for linux user.
