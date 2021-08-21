@@ -16,7 +16,7 @@ How to use?
      `adb devices` (check your phone, there should be a prompt asking you to grant USB debugging. Tick always allow and press allow.)
   5. Enter in `adb devices` again to check if your device is authorised. If you see `SERIAL_NUMBER   DEVICE` on cmd, congratulations, you've done the setup properly.
  
- - Executing the script: 
+- Executing the script: 
   1. Launch terminal. Navigate to the folder where the script are.
   2. To run the script, first you need to give execute permission.
      `chmod +x debloat-linux.sh`
