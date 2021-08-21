@@ -10,6 +10,12 @@ How to use?
      For example:
          Fedora: `sudo dnf install android-tools`
          Ubuntu: `sudo apt install adb fastboot` (side note: this will install a slightly outdated version of adb and fastboot. I'll soon upload script for you guys to install latest version of adb and fastboot to your Ubuntu system.)
+  2. Enable USB debugging. Find it on developer option.
+  3. Connect the phone to the pc.
+  4. Launch cmd and enter these command one by one:
+     `cd \platform-tools`
+     `adb devices` (check your phone, there should be a prompt asking you to grant USB debugging. Tick always allow and press allow.)
+  5. Enter in `adb devices` again to check if your device is authorised. If you see `SERIAL_NUMBER  DEVICE` on cmd, congratulations, you've done the setup properly.
  
  - Executing the script: 
   1. Launch terminal. Navigate to the folder where the script are.
@@ -17,6 +23,8 @@ How to use?
      `chmod +x debloat-linux.sh`
   3. Execute the script.
      `./debloat-linux.sh`
+_brotip: you can download the script with this command: `wget https://github.com/Hakimi0804/realmeUI-debloater/raw/main/debloat-linux.sh`_
+
 
 **For Windows user**, [click here to download the batch file](https://github.com/Hakimi0804/realmeUI-debloater/raw/main/realme-UI-debloater.bat).
 How to use?
