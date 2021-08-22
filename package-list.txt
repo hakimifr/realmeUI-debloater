@@ -1,0 +1,76 @@
+# ColorOS bloat
+com.heytap.browser                               # Realme Browser
+com.oppo.music                                   # Music (RUI-1)
+com.heytap.music                                 # Music (RUI-2)
+com.coloros.video                                # Video
+com.coloros.filemanager                          # File Manager
+com.heytap.usercenter                            # My Realme
+com.heytap.cloud                                 # Heytap Cloud
+com.coloros.gamespace                            # App Enhancement Services
+com.coloros.compass2                             # Compass
+com.coloros.backuprestore                        # Clone Phone
+com.oppo.quicksearchbox                          # Oppo Search
+com.coloros.assistantscreen                      # Smart Assistant
+com.redteamobile.roaming                         # ORoaming
+com.coloros.weather2                             # Weather 
+com.realme.securitycheck                         # Security Analysis
+com.coloros.soundrecorder                        # Recorder
+com.coloros.screenrecorder                       # Screen Recording
+com.coloros.phonemanager                         # Phone Manager
+com.facebook.system                              # Facebook App Installer
+com.facebook.services                            # Facebook Services
+com.facebook.appmanager                          # Facebook App Manager
+com.android.fmradio                              # FM Radio
+com.coloros.focusmode                            # Focus Mode
+com.heytap.pictorial                             # Lockscreen Magazine 
+com.coloros.oshare                               # Realme Share
+com.nearme.atlas                                 # Secure Payment 
+com.coloros.floatassistant                       # Assistive Ball
+com.coloros.securepay                            # Payment Protection
+com.coloros.smartdrive                           # Smart Driving
+com.coloros.sceneservice                         # Smart Services
+com.realme.movieshot                             # Movie Shot
+com.coloros.ocrscanner                           # OCR Scanner
+com.coloros.smartsidebar                         # Smart Sidebar
+com.heytap.market                                # App Market
+com.heytap.themestore                            # Theme Store
+com.heytap.market                                # App Market
+com.heytap.themestore                            # Theme Store
+com.coloros.healthcheck                          # Quick check
+com.oppo.operationManual                         # User Guide
+com.coloros.phonenoareainquire                   # Number Origin
+com.ted.number                                   # Identification Of Unknown Numbers
+com.oppo.logkit                                  # Feedback Toolkit (RUI-1)
+com.coloros.logkit                               # Feedback (RUI-2)
+com.coloros.childrenspace                        # Kids Space
+com.heytap.habit.analysis                        # Intelligent Analytics System
+com.heytap.openid                                # OpenID
+com.coloros.lockassistant                        # Lock Assistant
+com.coloros.securitypermission                   # Permission Management Of Phone Manager
+com.coloros.backuprestore.remoteservice          # Clone Phone Remote Service
+com.coloros.healthservice                        # Health Service
+com.coloros.oppomultiapp                         # App Cloner
+com.coloros.providers.fileinfo                   # File Info
+com.finshell.fin                                 # Finshell payment
+
+# Gapps
+com.google.android.keep                          # Google Keep Notes
+ com.google.android.apps.wellbeing               # Digital Wellbeing
+ com.google.android.apps.nbu.paisa.user          # Google Pay
+ com.google.android.projection.gearhead          # Android Auto
+ com.google.android.gm                           # Gmail
+ com.google.android.googlequicksearchbox         # Google
+ com.google.android.marvin.talkback              # Android Accessibility Suite
+ com.android.hotwordenrollment.okgoogle          # OK Google Enrollment
+ com.google.android.tts                          # Google Text-To-Speech Engine
+ com.google.android.feedback                     # Market Feedback Agent
+ com.google.android.gms.location.history         # Google Location History
+ com.google.android.inputmethod.latin            # Gboard (Google Keyboard)
+ com.google.android.youtube                      # Youtube
+ com.google.android.apps.youtube.music           # Youtube-Music
+ com.google.android.dialer                       # Google Phone
+ com.google.android.contacts                     # Google Contacts
+ com.google.android.apps.messaging               # Google Messages
+ com.google.android.apps.googleassistant         # Google Assistant
+ com.google.android.apps.podcasts                # Google Podcast
+ com.google.android.apps.subscription            # Google One
