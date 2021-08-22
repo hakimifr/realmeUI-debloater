@@ -2,7 +2,7 @@
 Dear realme users, please stop debloating `com.coloros.weather.service` to prevent lock screen flicker OK? Thank you for your notice.
 
 ## How to Use
-**For linux user**, [click here to download the shell script file](https://github.com/Hakimi0804/realmeUI-debloater/raw/main/debloat-linux.sh).
+**For linux user**, [click here to download the shell script file](https://github.com/Hakimi0804/realmeUI-debloater/releases/download/v1.0/debloat-linux.sh).
 How to use?
 - Setting up platform-tools:
   1. Do a Google search on how to set up adb and fastboot for your linux distro.
@@ -21,7 +21,7 @@ How to use?
      `chmod +x debloat-linux.sh`
   3. Execute the script.
      `./debloat-linux.sh`
-_brotip: you can download the script with this command: `wget https://github.com/Hakimi0804/realmeUI-debloater/raw/main/debloat-linux.sh`_
+_brotip: you can download the script with this command: `wget https://github.com/Hakimi0804/realmeUI-debloater/releases/download/v1.0/debloat-linux.sh`_
 
 
 **For Windows user**, [click here to download the batch file](https://github.com/Hakimi0804/realmeUI-debloater/raw/main/realme-UI-debloater.bat).
@@ -37,7 +37,7 @@ How to use?
   6. Enter in `adb devices` again to check if your device is authorised. If you see `SERIAL_NUMBER    DEVICE` on cmd, congratulations, you've done the setup properly.
 
 - Executing the script:
-  1. [Download](https://github.com/Hakimi0804/realmeUI-debloater/raw/main/realme-UI-debloater.bat) the script and copy it to the platform-tools folder.
+  1. [Download](https://github.com/Hakimi0804/realmeUI-debloater/releases/download/v1.0/realme-UI-debloater.bat) the script and copy it to the platform-tools folder.
   2. From the platform-tools folder, double click the script. A cmd window should show up. Do as the prompt say, select mode that you want.
   3. That's it! Have fun debloating all those crap!
 
