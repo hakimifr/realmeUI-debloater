@@ -207,6 +207,7 @@ checkadb () {
         mainmenu
     elif [ $donecheck == 2 ]
     then
+        clear
         exit
     else
         echo "Enter a valid input."
@@ -227,6 +228,7 @@ donedebloat () {
         mainmenu
     elif [ $donedebloatprompt == 2 ]
     then
+        clear
         exit
     else
         echo "Enter a valid input."
@@ -234,6 +236,13 @@ donedebloat () {
         sleep 3s
         donedebloat
     fi
+}
+
+killadb () {
+    clear
+    echo "Killing"
+    adb kill-server
+    donedebloat
 }
 
 mainmenu () {
@@ -252,7 +261,8 @@ mainmenu () {
     echo "3 - Google apps debloat"
     echo "4 - rebloat all debloated apps"
     echo "5 - check if adb is working"
-    echo "6 - exit"
+    echo "6 - kill adb daemon"
+    echo "7 - exit"
     
     read -p "Type 1, 2, 3, 4, 5 or 6 then press ENTER: " mode
     if [ $mode == 1 ]
@@ -272,6 +282,10 @@ mainmenu () {
         checkadb
     elif [ $mode == 6 ]
     then
+        killadb
+    elif [ $mode == 7 ]
+    then
+        clear
         exit
     else
         echo "Enter a valid input."
