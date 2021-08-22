@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# ehy didn't I use for loops? well I copy pasted this from winblows script. Whatever i might fix it later but idk
+
 light () {
     clear
     echo "removing..."
