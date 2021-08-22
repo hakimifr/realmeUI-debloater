@@ -20,7 +20,7 @@ How to use?
   2. To run the script, first you need to give execute permission.
      `chmod +x debloat-linux.sh`
   3. Execute the script.
-     `./debloat-linux.sh`
+     `./debloat-linux.sh`.
 _brotip: you can download the script with this command: `wget https://github.com/Hakimi0804/realmeUI-debloater/releases/download/v1.0/debloat-linux.sh`_
 
 
