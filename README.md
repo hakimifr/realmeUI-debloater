@@ -7,7 +7,9 @@ How to use?
 - Setting up platform-tools:
   1. Do a Google search on how to set up adb and fastboot for your linux distro.
      For example:
+     
          Fedora: `sudo dnf install android-tools`.
+         
          Ubuntu: `sudo apt install adb fastboot` (side note: for ubuntu this will install a slightly outdated version of adb and fastboot. use [this installer](https://github.com/Hakimi0804/realmeUI-debloater/releases/download/v1.0/ubuntu-adb-setup.sh) to install latest version).
   2. Enable USB debugging. Find it on developer option.
   3. Connect the phone to the pc.
