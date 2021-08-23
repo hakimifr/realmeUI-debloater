@@ -140,7 +140,7 @@ rebloat () {
 
 checkadb () {
     clear
-    adb devices
+    tput setaf 2; adb devices; tput sgr 0
     echo 1 - "return to menu"
     echo 2 - "exit"
     read -p "Type 1, or 2 then press ENTER: " donecheck
@@ -161,9 +161,9 @@ checkadb () {
 
 donedebloat () {
     clear
-    echo "$(tput setaf 2; tput bold)done!$(tput sgr 0)"
+    echo "$(tput setaf 2; tput bold)done!"
     echo "1 - return to menu"
-    echo "2 - exit"
+    echo "2 - exit$(tput sgr 0)"
     read -p "Type 1, or 2 then press ENTER: " donedebloatprompt
     if [ $donedebloatprompt == 1 ]
     then
