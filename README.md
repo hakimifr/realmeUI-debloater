@@ -28,7 +28,8 @@ How do I use it?
 
 ## Windows User
 [Click here to download the batch file](https://github.com/Hakimi0804/realmeUI-debloater/raw/main/realme-UI-debloater.bat).
-How to use?
+
+How do I use it?
 - Setting up platform-tools:
   1. Download [platform-tools](https://dl.google.com/android/repository/platform-tools-latest-windows.zip) compressed file.
   2. Unzip it and put it on `C:\`. Don't put it on any other folder.
