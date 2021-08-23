@@ -8,7 +8,7 @@ How to use?
   1. Do a Google search on how to set up adb and fastboot for your linux distro.
      For example:
      
-     Fedora: `sudo dnf install android-tools`.
+     Fedora: `sudo dnf install android-tools`
          
      Ubuntu: `sudo apt install adb fastboot`
      
