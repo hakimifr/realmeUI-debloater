@@ -1,30 +1,100 @@
 #!/bin/bash
 
-# ehy didn't I use for loops? well I copy pasted this from winblows script. Whatever i might fix it later but idk
+gapps_list="
+com.google.android.keep                          # Google Keep Notes
+com.google.android.apps.wellbeing                # Digital Wellbeing
+com.google.android.apps.nbu.paisa.user           # Google Pay
+com.google.android.projection.gearhead           # Android Auto
+com.google.android.gm                            # Gmail
+com.google.android.googlequicksearchbox          # Google
+com.google.android.marvin.talkback               # Android Accessibility Suite
+com.android.hotwordenrollment.okgoogle           # OK Google Enrollment
+com.google.android.tts                           # Google Text-To-Speech Engine
+com.google.android.feedback                      # Market Feedback Agent
+com.google.android.gms.location.history          # Google Location History
+com.google.android.inputmethod.latin             # Gboard (Google Keyboard)
+com.google.android.youtube                       # Youtube
+com.google.android.apps.youtube.music            # Youtube-Music
+com.google.android.dialer                        # Google Phone
+com.google.android.contacts                      # Google Contacts
+com.google.android.apps.messaging                # Google Messages
+com.google.android.apps.googleassistant          # Google Assistant
+com.google.android.apps.podcasts                 # Google Podcast
+com.google.android.apps.subscription             # Google One
+"
 
+coloros_bloat="
+# light
+com.heytap.browser                               # Realme Browser 
+com.oppo.music                                   # Music (RUI-1) 
+com.heytap.music                                 # Music (RUI-2) 
+com.coloros.video                                # Video 
+com.coloros.filemanager                          # File Manager 
+com.coloros.compass2                             # Compass 
+com.redteamobile.roaming                         # ORoaming 
+com.realme.securitycheck                         # Security Analysis 
+com.coloros.phonemanager                         # Phone Manager 
+com.heytap.market                                # App Market 
+com.heytap.themestore                            # Theme Store 
+com.finshell.fin                                 # Finshell payment 
+com.heytap.cloud                                 # Heytap Cloud 
+com.realme.movieshot                             # Movie Shot 
+com.coloros.healthcheck                          # Quick check 
+com.coloros.backuprestore                        # Clone Phone 
+com.coloros.backuprestore.remoteservice          # Clone Phone Remote Service
+
+# leftover
+com.heytap.usercenter                            # My Realme
+com.coloros.gamespace                            # App Enhancement Services
+com.oppo.quicksearchbox                          # Oppo Search
+com.coloros.assistantscreen                      # Smart Assistant
+com.coloros.weather2                             # Weather 
+com.coloros.soundrecorder                        # Recorder
+com.coloros.screenrecorder                       # Screen Recording
+com.coloros.phonemanager                         # Phone Manager
+com.facebook.system                              # Facebook App Installer
+com.facebook.services                            # Facebook Services
+com.facebook.appmanager                          # Facebook App Manager
+com.android.fmradio                              # FM Radio
+com.coloros.focusmode                            # Focus Mode
+com.heytap.pictorial                             # Lockscreen Magazine 
+com.coloros.oshare                               # Realme Share
+com.nearme.atlas                                 # Secure Payment 
+com.coloros.floatassistant                       # Assistive Ball
+com.coloros.securepay                            # Payment Protection
+com.coloros.smartdrive                           # Smart Driving
+com.coloros.sceneservice                         # Smart Services
+com.coloros.ocrscanner                           # OCR Scanner
+com.coloros.smartsidebar                         # Smart Sidebar
+com.heytap.themestore                            # Theme Store
+com.oppo.operationManual                         # User Guide
+com.coloros.phonenoareainquire                   # Number Origin
+com.ted.number                                   # Identification Of Unknown Numbers
+com.oppo.logkit                                  # Feedback Toolkit (RUI-1)
+com.coloros.logkit                               # Feedback (RUI-2)
+com.coloros.childrenspace                        # Kids Space
+com.heytap.habit.analysis                        # Intelligent Analytics System
+com.heytap.openid                                # OpenID
+com.coloros.lockassistant                        # Lock Assistant
+com.coloros.securitypermission                   # Permission Management Of Phone Manager
+com.coloros.healthservice                        # Health Service
+com.coloros.oppomultiapp                         # App Cloner
+"
+
+counter=0
 light () {
     clear
     echo "removing..."
     sleep 1s
-    adb shell pm uninstall -k --user 0 com.heytap.browser                               #Realme Browser
-    adb shell pm uninstall -k --user 0 com.oppo.music                                   #Music (RUI-1)
-    adb shell pm uninstall -k --user 0 com.heytap.music                                 #Music (RUI-2)
-    adb shell pm uninstall -k --user 0 com.coloros.video                                #Video
-    adb shell pm uninstall -k --user 0 com.coloros.filemanager                          #File Manager
-    adb shell pm uninstall -k --user 0 com.coloros.compass2                             #Compass
-    adb shell pm uninstall -k --user 0 com.redteamobile.roaming                         #ORoaming
-    adb shell pm uninstall -k --user 0 com.realme.securitycheck                         #Security Analysis
-    adb shell pm uninstall -k --user 0 com.coloros.phonemanager                         #Phone Manager
-    adb shell pm uninstall -k --user 0 com.heytap.market                                #App Market
-    adb shell pm uninstall -k --user 0 com.heytap.themestore                            #Theme Store
-    adb shell pm disable-user com.heytap.market                                         #App Market
-    adb shell pm disable-user com.heytap.themestore                                     #Theme Store
-    adb shell pm uninstall -k --user 0 com.finshell.fin                                 #Finshell payment
-    adb shell pm uninstall -k --user 0 com.heytap.cloud                                 #Heytap Cloud
-    adb shell pm uninstall -k --user 0 com.realme.movieshot                             #Movie Shot
-    adb shell pm uninstall -k --user 0 com.coloros.healthcheck                          #Quick check
-    adb shell pm uninstall -k --user 0 com.coloros.backuprestore                        #Clone Phone
-    adb shell pm uninstall -k --user 0 com.coloros.backuprestore.remoteservice          #Clone Phone Remote Service
+    for app in $coloros_bloat
+    do
+        adb shell pm uninstall -k --user 0 $app
+        ((counter++))
+        if [ $counter -ge 17 ]
+        then
+        break
+        fi
+    done
     clear
     donedebloat
 }
@@ -33,59 +103,12 @@ super () {
     clear
     echo "removing..."
     sleep 1s
-    adb shell pm uninstall -k --user 0 com.heytap.browser                               #Realme Browser
-    adb shell pm uninstall -k --user 0 com.oppo.music                                   #Music (RUI-1)
-    adb shell pm uninstall -k --user 0 com.heytap.music                                 #Music (RUI-2)
-    adb shell pm uninstall -k --user 0 com.coloros.video                                #Video
-    adb shell pm uninstall -k --user 0 com.coloros.filemanager                          #File Manager
-    adb shell pm uninstall -k --user 0 com.heytap.usercenter                            #My Realme
-    adb shell pm uninstall -k --user 0 com.heytap.cloud                                 #Heytap Cloud
-    adb shell pm uninstall -k --user 0 com.coloros.gamespace                            #App Enhancement Services
-    adb shell pm uninstall -k --user 0 com.coloros.compass2                             #Compass
-    adb shell pm uninstall -k --user 0 com.coloros.backuprestore                        #Clone Phone
-    adb shell pm uninstall -k --user 0 com.oppo.quicksearchbox                          #Oppo Search
-    adb shell pm uninstall -k --user 0 com.coloros.assistantscreen                      #Smart Assistant
-    adb shell pm uninstall -k --user 0 com.redteamobile.roaming                         #ORoaming
-    adb shell pm uninstall -k --user 0 com.coloros.weather2                             #Weather 
-    adb shell pm uninstall -k --user 0 com.realme.securitycheck                         #Security Analysis
-    adb shell pm uninstall -k --user 0 com.coloros.soundrecorder                        #Recorder
-    adb shell pm uninstall -k --user 0 com.coloros.screenrecorder                       #Screen Recording
-    adb shell pm uninstall -k --user 0 com.coloros.phonemanager                         #Phone Manager
-    adb shell pm uninstall -k --user 0 com.facebook.system                              #Facebook App Installer
-    adb shell pm uninstall -k --user 0 com.facebook.services                            #Facebook Services
-    adb shell pm uninstall -k --user 0 com.facebook.appmanager                          #Facebook App Manager
-    adb shell pm uninstall -k --user 0 com.android.fmradio                              #FM Radio
-    adb shell pm uninstall -k --user 0 com.coloros.focusmode                            #Focus Mode
-    adb shell pm uninstall -k --user 0 com.heytap.pictorial                             #Lockscreen Magazine 
-    adb shell pm uninstall -k --user 0 com.coloros.oshare                               #Realme Share
-    adb shell pm uninstall -k --user 0 com.nearme.atlas                                 #Secure Payment 
-    adb shell pm uninstall -k --user 0 com.coloros.floatassistant                       #Assistive Ball
-    adb shell pm uninstall -k --user 0 com.coloros.securepay                            #Payment Protection
-    adb shell pm uninstall -k --user 0 com.coloros.smartdrive                           #Smart Driving
-    adb shell pm uninstall -k --user 0 com.coloros.sceneservice                         #Smart Services
-    adb shell pm uninstall -k --user 0 com.realme.movieshot                             #Movie Shot
-    adb shell pm uninstall -k --user 0 com.coloros.ocrscanner                           #OCR Scanner
-    adb shell pm uninstall -k --user 0 com.coloros.smartsidebar                         #Smart Sidebar
-    adb shell pm uninstall -k --user 0 com.heytap.market                                #App Market
-    adb shell pm uninstall -k --user 0 com.heytap.themestore                            #Theme Store
-    adb shell pm disable-user com.heytap.market                                         #App Market
-    adb shell pm disable-user com.heytap.themestore                                     #Theme Store
-    adb shell pm uninstall -k --user 0 com.coloros.healthcheck                          #Quick check
-    adb shell pm uninstall -k --user 0 com.oppo.operationManual                         #User Guide
-    adb shell pm uninstall -k --user 0 com.coloros.phonenoareainquire                   #Number Origin
-    adb shell pm uninstall -k --user 0 com.ted.number                                   #Identification Of Unknown Numbers
-    adb shell pm uninstall -k --user 0 com.oppo.logkit                                  #Feedback Toolkit (RUI-1)
-    adb shell pm uninstall -k --user 0 com.coloros.logkit                               #Feedback (RUI-2)
-    adb shell pm uninstall -k --user 0 com.coloros.childrenspace                        #Kids Space
-    adb shell pm uninstall -k --user 0 com.heytap.habit.analysis                        #Intelligent Analytics System
-    adb shell pm uninstall -k --user 0 com.heytap.openid                                #OpenID
-    adb shell pm uninstall -k --user 0 com.coloros.lockassistant                        #Lock Assistant
-    adb shell pm uninstall -k --user 0 com.coloros.securitypermission                   #Permission Management Of Phone Manager
-    adb shell pm uninstall -k --user 0 com.coloros.backuprestore.remoteservice          #Clone Phone Remote Service
-    adb shell pm uninstall -k --user 0 com.coloros.healthservice                        #Health Service
-    adb shell pm uninstall -k --user 0 com.coloros.oppomultiapp                         #App Cloner
-    adb shell pm uninstall -k --user 0 com.coloros.providers.fileinfo                   #File Info
-    adb shell pm uninstall -k --user 0 com.finshell.fin                                 #Finshell payment
+    for app in $coloros_bloat
+    do
+        adb shell pm uninstall -k --user 0 $app
+    done
+    adb shell pm disable-user com.heytap.market     # App Market 
+    adb shell pm disable-user com.heytap.themestore # Theme Store
     clear
     donedebloat
 }
@@ -94,26 +117,10 @@ gapps () {
     clear
     echo "removing..."
     sleep 1s
-    adb shell pm uninstall -k --user 0 com.google.android.keep                          #Google Keep Notes
-    adb shell pm uninstall -k --user 0 com.google.android.apps.wellbeing                #Digital Wellbeing
-    adb shell pm uninstall -k --user 0 com.google.android.apps.nbu.paisa.user           #Google Pay
-    adb shell pm uninstall -k --user 0 com.google.android.projection.gearhead           #Android Auto
-    adb shell pm uninstall -k --user 0 com.google.android.gm                            #Gmail
-    adb shell pm uninstall -k --user 0 com.google.android.googlequicksearchbox          #Google
-    adb shell pm uninstall -k --user 0 com.google.android.marvin.talkback               #Android Accessibility Suite
-    adb shell pm uninstall -k --user 0 com.android.hotwordenrollment.okgoogle           #OK Google Enrollment
-    adb shell pm uninstall -k --user 0 com.google.android.tts                           #Google Text-To-Speech Engine
-    adb shell pm uninstall -k --user 0 com.google.android.feedback                      #Market Feedback Agent
-    adb shell pm uninstall -k --user 0 com.google.android.gms.location.history          #Google Location History
-    adb shell pm uninstall -k --user 0 com.google.android.inputmethod.latin             #Gboard (Google Keyboard)
-    adb shell pm uninstall -k --user 0 com.google.android.youtube                       #Youtube
-    adb shell pm uninstall -k --user 0 com.google.android.apps.youtube.music            #Youtube-Music
-    adb shell pm uninstall -k --user 0 com.google.android.dialer                        #Google Phone
-    adb shell pm uninstall -k --user 0 com.google.android.contacts                      #Google Contacts
-    adb shell pm uninstall -k --user 0 com.google.android.apps.messaging                #Google Messages
-    adb shell pm uninstall -k --user 0 com.google.android.apps.googleassistant          #Google Assistant
-    adb shell pm uninstall -k --user 0 com.google.android.apps.podcasts                 #Google Podcast
-    adb shell pm uninstall -k --user 0 com.google.android.apps.subscription             #Google One
+    for app in $gapps_list
+    do
+    adb shell pm uninstall -k --user 0 $app
+    done
     clear
     donedebloat
 }
@@ -121,79 +128,12 @@ gapps () {
 rebloat () {
     clear
     sleep 1s
-    adb shell cmd package install-existing --user 0 com.heytap.browser                               #Realme Browser
-    adb shell cmd package install-existing --user 0 com.oppo.music                                   #Music (RUI-1)
-    adb shell cmd package install-existing --user 0 com.heytap.music                                 #Music (RUI-2)
-    adb shell cmd package install-existing --user 0 com.coloros.video                                #Video
-    adb shell cmd package install-existing --user 0 com.coloros.filemanager                          #File Manager
-    adb shell cmd package install-existing --user 0 com.heytap.usercenter                            #My Realme
-    adb shell cmd package install-existing --user 0 com.heytap.cloud                                 #Heytap Cloud
-    adb shell cmd package install-existing --user 0 com.coloros.gamespace                            #App Enhancement Services
-    adb shell cmd package install-existing --user 0 com.coloros.compass2                             #Compass
-    adb shell cmd package install-existing --user 0 com.coloros.backuprestore                        #Clone Phone
-    adb shell cmd package install-existing --user 0 com.oppo.quicksearchbox                          #Oppo Search
-    adb shell cmd package install-existing --user 0 com.coloros.assistantscreen                      #Smart Assistant
-    adb shell cmd package install-existing --user 0 com.redteamobile.roaming                         #ORoaming
-    adb shell cmd package install-existing --user 0 com.coloros.weather2                             #Weather 
-    adb shell cmd package install-existing --user 0 com.realme.securitycheck                         #Security Analysis
-    adb shell cmd package install-existing --user 0 com.coloros.soundrecorder                        #Recorder
-    adb shell cmd package install-existing --user 0 com.coloros.screenrecorder                       #Screen Recording
-    adb shell cmd package install-existing --user 0 com.coloros.phonemanager                         #Phone Manager
-    adb shell cmd package install-existing --user 0 com.facebook.system                              #Facebook App Installer
-    adb shell cmd package install-existing --user 0 com.facebook.services                            #Facebook Services
-    adb shell cmd package install-existing --user 0 com.facebook.appmanager                          #Facebook App Manager
-    adb shell cmd package install-existing --user 0 com.android.fmradio                              #FM Radio
-    adb shell cmd package install-existing --user 0 com.coloros.focusmode                            #Focus Mode
-    adb shell cmd package install-existing --user 0 com.heytap.pictorial                             #Lockscreen Magazine 
-    adb shell cmd package install-existing --user 0 com.coloros.oshare                               #Realme Share
-    adb shell cmd package install-existing --user 0 com.nearme.atlas                                 #Secure Payment 
-    adb shell cmd package install-existing --user 0 com.coloros.floatassistant                       #Assistive Ball
-    adb shell cmd package install-existing --user 0 com.coloros.securepay                            #Payment Protection
-    adb shell cmd package install-existing --user 0 com.coloros.smartdrive                           #Smart Driving
-    adb shell cmd package install-existing --user 0 com.coloros.sceneservice                         #Smart Services
-    adb shell cmd package install-existing --user 0 com.realme.movieshot                             #Movie Shot
-    adb shell cmd package install-existing --user 0 com.coloros.ocrscanner                           #OCR Scanner
-    adb shell cmd package install-existing --user 0 com.coloros.smartsidebar                         #Smart Sidebar
-    adb shell cmd package install-existing --user 0 com.heytap.market                                #App Market
-    adb shell cmd package install-existing --user 0 com.heytap.themestore                            #Theme Store
-    adb shell pm enable com.heytap.market                                                            #App Market
-    adb shell pm enable com.heytap.themestore                                                        #Theme Store
-    adb shell cmd package install-existing --user 0 com.coloros.healthcheck                          #Quick check
-    adb shell cmd package install-existing --user 0 com.oppo.operationManual                         #User Guide
-    adb shell cmd package install-existing --user 0 com.coloros.phonenoareainquire                   #Number Origin
-    adb shell cmd package install-existing --user 0 com.ted.number                                   #Identification Of Unknown Numbers
-    adb shell cmd package install-existing --user 0 com.oppo.logkit                                  #Feedback Toolkit (RUI-1)
-    adb shell cmd package install-existing --user 0 com.coloros.logkit                               #Feedback (RUI-2)
-    adb shell cmd package install-existing --user 0 com.coloros.childrenspace                        #Kids Space
-    adb shell cmd package install-existing --user 0 com.heytap.habit.analysis                        #Intelligent Analytics System
-    adb shell cmd package install-existing --user 0 com.heytap.openid                                #OpenID
-    adb shell cmd package install-existing --user 0 com.coloros.lockassistant                        #Lock Assistant
-    adb shell cmd package install-existing --user 0 com.coloros.securitypermission                   #Permission Management Of Phone Manager
-    adb shell cmd package install-existing --user 0 com.coloros.backuprestore.remoteservice          #Clone Phone Remote Service
-    adb shell cmd package install-existing --user 0 com.coloros.healthservice                        #Health Service
-    adb shell cmd package install-existing --user 0 com.coloros.oppomultiapp                         #App Cloner
-    adb shell cmd package install-existing --user 0 com.coloros.providers.fileinfo                   #File Info
-    adb shell cmd package install-existing --user 0 com.finshell.fin                                 #Finshell payment
-    adb shell cmd package install-existing --user 0 com.google.android.keep                          #Google Keep Notes
-    adb shell cmd package install-existing --user 0 com.google.android.apps.wellbeing                #Digital Wellbeing
-    adb shell cmd package install-existing --user 0 com.google.android.apps.nbu.paisa.user           #Google Pay
-    adb shell cmd package install-existing --user 0 com.google.android.projection.gearhead           #Android Auto
-    adb shell cmd package install-existing --user 0 com.google.android.gm                            #Gmail
-    adb shell cmd package install-existing --user 0 com.google.android.googlequicksearchbox          #Google
-    adb shell cmd package install-existing --user 0 com.google.android.marvin.talkback               #Android Accessibility Suite
-    adb shell cmd package install-existing --user 0 com.android.hotwordenrollment.okgoogle           #OK Google Enrollment
-    adb shell cmd package install-existing --user 0 com.google.android.tts                           #Google Text-To-Speech Engine
-    adb shell cmd package install-existing --user 0 com.google.android.feedback                      #Market Feedback Agent
-    adb shell cmd package install-existing --user 0 com.google.android.gms.location.history          #Google Location History
-    adb shell cmd package install-existing --user 0 com.google.android.inputmethod.latin             #Gboard (Google Keyboard)
-    adb shell cmd package install-existing --user 0 com.google.android.youtube                       #Youtube
-    adb shell cmd package install-existing --user 0 com.google.android.apps.youtube.music            #Youtube-Music
-    adb shell cmd package install-existing --user 0 com.google.android.dialer                        #Google Phone
-    adb shell cmd package install-existing --user 0 com.google.android.contacts                      #Google Contacts
-    adb shell cmd package install-existing --user 0 com.google.android.apps.messaging                #Google Messages
-    adb shell cmd package install-existing --user 0 com.google.android.apps.googleassistant          #Google Assistant
-    adb shell cmd package install-existing --user 0 com.google.android.apps.podcasts                 #Google Podcast
-    adb shell cmd package install-existing --user 0 com.google.android.apps.subscription             #Google One
+    for app in $coloros_bloat $gapps_list
+    do
+        adb shell cmd package install-existing --user 0 $app
+    done
+    adb shell pm enable com.heytap.market     # App Market 
+    adb shell pm enable com.heytap.themestore # Theme Store 
     clear
     donedebloat
 }
