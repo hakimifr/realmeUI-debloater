@@ -152,8 +152,8 @@ checkadb () {
         clear
         exit
     else
-        echo "Enter a valid input."
-        echo "Returning to menu in 3 seconds."
+        echo "$(tput setaf 1; tput bold)Enter a valid input."
+        echo "Returning to menu in 3 seconds.$(tput sgr 0)"
         sleep 3s
         checkadb
     fi
@@ -161,7 +161,7 @@ checkadb () {
 
 donedebloat () {
     clear
-    echo done!
+    echo "$(tput setaf 2; tput bold)done!$(tput sgr 0)"
     echo "1 - return to menu"
     echo "2 - exit"
     read -p "Type 1, or 2 then press ENTER: " donedebloatprompt
@@ -173,8 +173,8 @@ donedebloat () {
         clear
         exit
     else
-        echo "Enter a valid input."
-        echo "Returning to menu in 3 seconds."
+        echo "$(tput setaf 1; tput bold)Enter a valid input."
+        echo "Returning to menu in 3 seconds.$(tput sgr 0)"
         sleep 3s
         donedebloat
     fi
@@ -190,23 +190,23 @@ killadb () {
 mainmenu () {
     clear
     mode=0
-    echo "-----------------------------------------------------------------------------------------------------------"
-    echo "lalalalala this is a cheaply made script feel free to modify it if something is wrong kek"
+    echo "$(tput setaf 2)-----------------------------------------------------------------------------------------------------------$(tput sgr 0)"
+    echo "$(tput setaf 6)lalalalala this is a cheaply made script feel free to modify it if something is wrong kek"
     echo "please make sure you've installed adb on your linux system."
     echo "search on google how to do that."
     echo "com.coloros.weather.service will not be debloated to prevent realme UI 2.0 user from softlocking their phone."
     echo "com.oppo.ota and com.oppo.otaui will also be excluded to make sure you can still receive ota."
-    echo "happy debloating"
-    echo "-----------------------------------------------------------------------------------------------------------"
-    echo "1 - light debloat"
+    echo "happy debloating$(tput sgr 0)"
+    echo "$(tput setaf 2)-----------------------------------------------------------------------------------------------------------$(tput sgr 0)"
+    echo "$(tput setaf 7; tput bold)1 - light debloat"
     echo "2 - full debloat (not including gapps)"
     echo "3 - Google apps debloat"
     echo "4 - rebloat all debloated apps"
     echo "5 - check if adb is working"
     echo "6 - kill adb daemon"
-    echo "7 - exit"
+    echo "7 - exit$(tput sgr 0)"
     
-    read -p "Type 1, 2, 3, 4, 5 or 6 then press ENTER: " mode
+    read -p "Type 1, 2, 3, 4, 5, 6 or 7 then press ENTER: " mode
     if [ $mode == 1 ]
     then
         light
@@ -230,8 +230,8 @@ mainmenu () {
         clear
         exit
     else
-        echo "Enter a valid input."
-        echo "Returning to menu in 3 seconds."
+        echo "$(tput setaf 1)Enter a valid input."
+        echo "Returning to menu in 3 seconds.$(tput sgr 0)"
         sleep 3s
         mainmenu
     fi
