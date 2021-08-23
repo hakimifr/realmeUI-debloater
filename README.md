@@ -2,7 +2,7 @@
 Dear realme users, please stop debloating `com.coloros.weather.service` to prevent lock screen flicker OK? Thank you for your notice.
 
 ## How to Use
-**For linux user**, [click here to download the shell script file](https://github.com/Hakimi0804/realmeUI-debloater/releases/download/v1.0/debloat-linux.sh).
+**For linux user**, [click here to download the bash script file](https://github.com/Hakimi0804/realmeUI-debloater/releases/download/v1.0/debloat-linux.sh).
 How to use?
 - Setting up platform-tools:
   1. Do a Google search on how to set up adb and fastboot for your linux distro.
