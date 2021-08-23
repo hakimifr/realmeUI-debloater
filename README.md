@@ -8,11 +8,11 @@ How to use?
   1. Do a Google search on how to set up adb and fastboot for your linux distro.
      For example:
          Fedora: `sudo dnf install android-tools`.
-         Ubuntu: `sudo apt install adb fastboot` (side note: this will install a slightly outdated version of adb and fastboot. use [this installer](https://github.com/Hakimi0804/realmeUI-debloater/releases/download/v1.0/ubuntu-adb-setup.sh) to install latest version.)
+         Ubuntu: `sudo apt install adb fastboot` (side note: this will install a slightly outdated version of adb and fastboot. use [this installer](https://github.com/Hakimi0804/realmeUI-debloater/releases/download/v1.0/ubuntu-adb-setup.sh) to install latest version).
   2. Enable USB debugging. Find it on developer option.
   3. Connect the phone to the pc.
   4. Launch terminal and enter this command:
-     `adb devices` (check your phone, there should be a prompt asking you to grant USB debugging. Tick always allow and press allow.)
+     `adb devices` (check your phone, there should be a prompt asking you to grant USB debugging. Tick always allow and press allow).
   5. Enter in `adb devices` again to check if your device is authorised. If you see `SERIAL_NUMBER   DEVICE` on cmd, congratulations, you've done the setup properly.
  
 - Executing the script: 
@@ -33,7 +33,7 @@ How to use?
   4. Connect the phone to the pc.
   5. Launch cmd and enter these command one by one:
      `cd \platform-tools`
-     `adb devices` (check your phone, there should be a prompt asking you to grant USB debugging. Tick always allow and press allow.)
+     `adb devices` (check your phone, there should be a prompt asking you to grant USB debugging. Tick always allow and press allow).
   6. Enter in `adb devices` again to check if your device is authorised. If you see `SERIAL_NUMBER    DEVICE` on cmd, congratulations, you've done the setup properly.
 
 - Executing the script:
