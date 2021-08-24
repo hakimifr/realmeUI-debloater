@@ -45,8 +45,7 @@ How do I use it?
 
 
 ## Side Notes
-- well ok i added script for linux user.
-- pardon me if i suck at scripting ok.
-- so why don't i add colour? well i'm too lazy to do that rn.
-- I do this all for fun
+- well ok i added script for linux user heh
+- pardon me if i suck at scripting ok
+- i did this just for fun lol
 - readme.md fixed by [raymond](https://raymond-1227.github.io/) and ok bye
