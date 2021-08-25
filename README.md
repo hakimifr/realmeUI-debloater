@@ -26,7 +26,7 @@ How do I use it?
   1. Launch terminal. Navigate to the folder where the script are.
   2. To run the script, first you need to give execute permission: `chmod +x debloat-linux.sh`
   3. Execute the script: `./debloat-linux.sh`.
-*(Pro Tip: you can download the script with this command: `wget https://github.com/Hakimi0804/realmeUI-debloater/releases/download/v1.0/debloat-linux.sh`)*
+*(Pro Tip: you can download the script with this command: `wget https://github.com/Hakimi0804/realmeUI-debloater/releases/download/v2.1/debloat-linux.sh`)*
 
 ## Windows User
 [Click here to download the batch file](https://github.com/Hakimi0804/realmeUI-debloater/releases/tag/v1.0).
