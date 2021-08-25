@@ -16,7 +16,7 @@ How do I use it?
          
      Ubuntu: `sudo apt install adb fastboot`
      
-     *(Side Note: For Ubuntu, this will install a slightly outdated version of adb and fastboot. use [this installer](https://github.com/Hakimi0804/realmeUI-debloater/releases/download/v1.0/ubuntu-adb-setup.sh) to install latest version.)*
+     *(Side Note: For Ubuntu, this will install a slightly outdated version of adb and fastboot. use [this installer](https://github.com/Hakimi0804/realmeUI-debloater/releases/download/v1.0/ubuntu-adb-setup.sh) to install latest version. This is usually not needed though.)*
   2. Enable USB debugging, this phone setting can be found in developer options.
   3. Connect the phone to your PC.
   4. Launch terminal and enter this command: `adb devices` (Check your phone, there should be a prompt asking you to grant USB debugging. Tick always allow and press allow.)
@@ -26,6 +26,7 @@ How do I use it?
   1. Launch terminal. Navigate to the folder where the script are.
   2. To run the script, first you need to give execute permission: `chmod +x debloat-linux.sh`
   3. Execute the script: `./debloat-linux.sh`.
+
 *(Pro Tip: you can download the script with this command: `wget https://github.com/Hakimi0804/realmeUI-debloater/releases/download/v2.1/debloat-linux.sh`)*
 
 ## Windows User
