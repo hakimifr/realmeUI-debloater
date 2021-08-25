@@ -1,7 +1,7 @@
 # realme UI Debloater
 Dear realme users, please stop debloating `com.coloros.weather.service` to prevent lock screen flicker OK?
 
-Currently only tested on **realme UI 2.0**.
+Currently only tested on **realme UI 1.0 / 2.0**.
 
 ## How to Use
 ### Linux User
