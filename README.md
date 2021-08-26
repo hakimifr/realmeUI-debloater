@@ -5,7 +5,7 @@ Currently only tested on **realme UI 1.0 / 2.0**.
 
 ## How to Use
 ### Linux User
-[Click here to download the bash script file](https://github.com/Hakimi0804/realmeUI-debloater/releases/tag/v2.1).
+[Click here to download the bash script file](https://github.com/Hakimi0804/realmeUI-debloater/releases/download/v2.2/debloat-linux.sh).
 
 How do I use it?
 - Setting up platform-tools:
@@ -27,7 +27,7 @@ How do I use it?
   2. To run the script, first you need to give execute permission: `chmod +x debloat-linux.sh`
   3. Execute the script: `./debloat-linux.sh`.
 
-*(Pro Tip: you can download the script with this command: `wget https://github.com/Hakimi0804/realmeUI-debloater/releases/download/v2.1/debloat-linux.sh`)*
+*(Pro Tip: you can download the script with this command: `wget https://github.com/Hakimi0804/realmeUI-debloater/releases/download/v2.2/debloat-linux.sh`)*
 
 ## Windows User
 [Click here to download the batch file](https://github.com/Hakimi0804/realmeUI-debloater/releases/tag/v1.0).
