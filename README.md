@@ -5,7 +5,9 @@ Currently only tested on **realme UI 1.0 / 2.0**.
 
 ## How to Use
 ### Linux User
-[Click here to download the bash script file](https://github.com/Hakimi0804/realmeUI-debloater/releases/download/v2.2/debloat-linux.sh).
+[Click here to download the bash script](https://github.com/Hakimi0804/realmeUI-debloater/blob/main/debloat-linux.sh)
+
+Or, download it with this command: `wget https://github.com/Hakimi0804/realmeUI-debloater/blob/main/debloat-linux.sh`
 
 How do I use it?
 - Setting up platform-tools:
@@ -16,7 +18,7 @@ How do I use it?
          
      Ubuntu: `sudo apt install adb fastboot`
      
-     *(Side Note: For Ubuntu, this will install a slightly outdated version of adb and fastboot. use [this installer](https://github.com/Hakimi0804/realmeUI-debloater/releases/download/v1.0/ubuntu-adb-setup.sh) to install latest version. This is usually not needed though.)*
+     *(Side Note: For Ubuntu, this might install a slightly outdated version of adb and fastboot. use [this installer](https://github.com/Hakimi0804/realmeUI-debloater/releases/download/v1.0/ubuntu-adb-setup.sh) to install latest version. This is usually not needed though.)*
   2. Enable USB debugging, this phone setting can be found in developer options.
   3. Connect the phone to your PC.
   4. Launch terminal and enter this command: `adb devices` (Check your phone, there should be a prompt asking you to grant USB debugging. Tick always allow and press allow.)
@@ -27,14 +29,13 @@ How do I use it?
   2. To run the script, first you need to give execute permission: `chmod +x debloat-linux.sh`
   3. Execute the script: `./debloat-linux.sh`.
 
-*(Pro Tip: you can download the script with this command: `wget https://github.com/Hakimi0804/realmeUI-debloater/releases/download/v2.2/debloat-linux.sh`)*
 
 ## Windows User
-[Click here to download the batch file](https://github.com/Hakimi0804/realmeUI-debloater/releases/tag/v1.0).
+[Click here to download the batch file](https://github.com/Hakimi0804/realmeUI-debloater/blob/main/realme-UI-debloater.bat)
 
 How do I use it?
 - Setting up platform-tools:
-  1. Download [platform-tools](https://dl.google.com/android/repository/platform-tools-latest-windows.zip) compressed file.
+  1. Download [platform-tools](https://dl.google.com/android/repository/platform-tools-latest-windows.zip).
   2. Unzip it and put it on `C:\`. Don't put it on any other folder.
   3. Enable USB debugging, this phone setting can be found in developer options.
   4. Connect the phone to the PC.
