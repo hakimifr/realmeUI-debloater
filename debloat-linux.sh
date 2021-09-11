@@ -27,14 +27,11 @@ coloros_bloat="
 com.heytap.browser 
 com.oppo.music 
 com.heytap.music 
-com.coloros.video 
-com.coloros.filemanager 
+com.coloros.video  
 com.coloros.compass2 
 com.redteamobile.roaming 
 com.realme.securitycheck 
-com.coloros.phonemanager 
-com.heytap.market 
-com.heytap.themestore 
+com.coloros.phonemanager
 com.finshell.fin 
 com.heytap.cloud 
 com.realme.movieshot 
@@ -43,13 +40,12 @@ com.coloros.backuprestore
 com.coloros.backuprestore.remoteservice
 
 
+com.coloros.filemanager
 com.heytap.usercenter
-com.coloros.gamespace
 com.oppo.quicksearchbox
 com.coloros.assistantscreen
 com.coloros.weather2 
 com.coloros.soundrecorder
-com.coloros.screenrecorder
 com.coloros.phonemanager
 com.facebook.system
 com.facebook.services
@@ -64,7 +60,6 @@ com.coloros.securepay
 com.coloros.smartdrive
 com.coloros.sceneservice
 com.coloros.ocrscanner
-com.coloros.smartsidebar
 com.heytap.themestore
 com.oppo.operationManual
 com.coloros.phonenoareainquire
@@ -80,86 +75,177 @@ com.coloros.healthservice
 com.coloros.oppomultiapp
 "
 
-sleeptimer=0s
+# forget about this shit
+# if anyone can improve this, please do it
+# while getopts i,h flag
+# do
+# case $flag in
+#     i)
+#         echo "this script is made to automate the process of debloating realme UI 1 / 2"
+#         echo "by @Hakimi0804"
+#         exit
+#         ;;
+#     h)
+#         echo "simply run the script and then choose the type of operation that you want to do"
+#         echo "launching main menu in 3 sec"
+#         sleep 3s
+#         mainmenu
+#         ;;
+#     *)  
+#         echo "invalid flag provided"
+#         exit
+#         ;;
+# esac
+# done
 
-while getopts i,h flag
-do
-case $flag in
-    i)
-        echo "this script is made to automate the process of debloating realme UI 1 / 2"
-        echo "by @Hakimi0804"
-        exit
-        ;;
-    h)
-        echo "simply run the script and then choose the type of operation that you want to do"
-        echo "launching main menu in 3 sec"
-        sleep 3s
-        mainmenu
-        ;;
-    *)  
-        echo "invalid flag provided"
-        exit
-        ;;
-esac
-done
+markettheme () {
+    clear
+    echo "$(tput bold)removing app market and theme store ...$(tput sgr 0)"
+    adb shell pm disable-user com.heytap.market
+    adb shell pm disable-user com.heytap.themestore
+    donedebloat
+}
 
 light () {
+    if [ -e "light-debloat.log" ]
+    then
+    rm light-debloat.log
+    fi
     counter=0
     clear
-    echo "removing..."
-    sleep 1s
     for app in $coloros_bloat
     do
-        adb shell pm uninstall -k --user 0 $app
+        echo "$(tput bold)removing $app ...$(tput sgr 0)"
+        echo "removing $app" >> light-debloat.log
+        echo "$(adb shell pm uninstall -k --user 0 $app)" >> light-debloat.log
+        echo "" >> light-debloat.log
         ((counter++))
-        if [[ $counter -ge 17 ]]
+        clear
+        if [ "$counter" -ge "14" ]
         then
-            adb shell pm disable-user com.heytap.market     # App Market 
-            adb shell pm disable-user com.heytap.themestore # Theme Store
-            sleep $sleeptimer
+            markettheme
             break
         fi
     done
+}
+
+showlight () {
+    counter=0
     clear
-    donedebloat
+    for app in $coloros_bloat
+    do
+        echo "$app"
+        ((counter++))
+        if [ "$counter" -ge "14" ]
+        then
+            echo "com.heytap.market"
+            echo "com.heytap.themestore"
+            break
+        fi
+    done
+    showmenu
 }
 
 super () {
+    if [ -e "full-debloat.log" ]
+    then
+    rm full-debloat.log
+    fi
     clear
-    echo "removing..."
-    sleep 1s
     for app in $coloros_bloat
     do
-        adb shell pm uninstall -k --user 0 $app
+        echo "$(tput bold)removing $app ...$(tput sgr 0)"
+        echo "removing $app" >> full-debloat.log
+        echo "$(adb shell pm uninstall -k --user 0 $app)" >> full-debloat.log
+        echo "" >> full-debloat.log
+        clear
     done
-    adb shell pm disable-user com.heytap.market
-    adb shell pm disable-user com.heytap.themestore
-    sleep $sleeptimer
+    markettheme
     clear
     donedebloat
+}
+
+showsuper () {
+    clear
+    for app in $coloros_bloat
+    do
+        echo "$app"
+    done
+    echo "com.heytap.market"
+    echo "com.heytap.themestore"
+    showmenu
 }
 
 gapps () {
+    if [ -e "gapps-debloat.log" ]
+    then
+    rm gapps-debloat.log
+    fi
     clear
-    echo "removing..."
     sleep 1s
     for app in $gapps_list
     do
-        adb shell pm uninstall -k --user 0 $app
+        echo "$(tput bold)removing $app ...$(tput sgr 0)"
+        echo "removing $app" >> gapps-debloat.log
+        echo "$(adb shell pm uninstall -k --user 0 $app)" >> gapps-debloat.log
+        echo "" >> gapps-debloat.log
+        clear
     done
-    sleep $sleeptimer
+    markettheme
+}
+
+showgapps () {
     clear
-    donedebloat
+    for app in $gapps_list
+    do
+        echo "$app"
+    done
+    showmenu
+}
+
+showmenu () {
+    tput setaf 2; tput bold
+    echo "1 - view light debloat package"
+    echo "2 - view full debloat package"
+    echo "3 - view gapps debloat package"
+    echo "4 - main menu"
+    tput sgr 0
+    read -p "Enter your choice: " SHOWMENUP
+    if [ "$SHOWMENUP" == "1" ]; then
+        showlight
+    elif [ "$SHOWMENUP" == "2" ]; then
+        showsuper
+    elif [ "$SHOWMENUP" == "3" ]; then
+        showgapps
+    elif [ "$SHOWMENUP" == "4" ]; then
+        mainmenu
+    else
+        tput setaf 1; tput bold
+        echo "invalid choice."
+        echo "returning to menu in 3 sec"
+        sleep 3s
+        tput sgr 0
+        clear
+        showmenu
+    fi
 }
 
 rebloat () {
+    if [ -e "rebloat.log" ]
+    then
+    rm rebloat.log
+    fi
     clear
-    echo "rebloating..."
-    sleep 1s
     for app in $coloros_bloat $gapps_list
     do
-        adb shell cmd package install-existing --user 0 $app
+        echo "$(tput bold)installing $app ...$(tput sgr 0)"
+        echo "installing $app" >> rebloat.log
+        echo "$(adb shell cmd package install-existing --user 0 $app)" >> rebloat.log
+        echo "" >> rebloat.log
+        clear
     done
+    echo "$(tput bold)enabling app market and theme store$(tput sgr 0)"
+    echo "enabling app market and theme store" >> rebloat.log
     adb shell pm enable com.heytap.market
     adb shell pm enable com.heytap.themestore 
     sleep $sleeptimer
@@ -173,14 +259,14 @@ checkadb () {
     echo 1 - "return to menu"
     echo 2 - "exit"
     read -p "Type 1, or 2 then press ENTER: " donecheck
-    if [[ $donecheck == 1 ]]
+    if [ "$donecheck" == "1" ]
     then
         mainmenu
-    elif [[ $donecheck == 2 ]]
+    elif [ "$donecheck" == "2" ]
     then
         clear
         exit
-    elif [[ $donecheck == "test" ]]
+    elif [ "$donecheck" == "test" ]
     then
         sleeptimer=20
         echo "Sleep timer set to 20s"
@@ -200,14 +286,14 @@ donedebloat () {
     echo "1 - return to menu"
     echo "2 - exit$(tput sgr 0)"
     read -p "Type 1, or 2 then press ENTER: " donedebloatprompt
-    if [[ $donedebloatprompt == 1 ]]
+    if [ "$donedebloatprompt" == "1" ]
     then
         mainmenu
-    elif [[ $donedebloatprompt == 2 ]]
+    elif [ "$donedebloatprompt" == "2" ]
     then
         clear
         exit
-    elif [[ $donedebloatprompt == "test" ]]
+    elif [ "$donedebloatprompt" == "test" ]
     then
         sleeptimer=20
         echo "Sleep timer set to 20s"
@@ -231,11 +317,13 @@ killadb () {
 custom () {
     clear
     read -p "Enter package name (type exit to go back to the menu): " customprompt
-    if [[ $customprompt == "exit" ]]
+    if [ "$customprompt" == "exit" ]
     then
         mainmenu
     else
-        adb shell pm uninstall -k --user 0 $customprompt
+        echo "removing $customprompt"
+        echo "removing $customprompt" >> custom-debloat.log
+        echo "$(adb shell pm uninstall -k --user 0 "$customprompt")" >> custom-debloat.log
         sleep $sleeptimer
         custom
     fi
@@ -244,14 +332,11 @@ custom () {
 mainmenu () {
     clear
     mode=0
-    echo "$(tput setaf 2)-----------------------------------------------------------------------------------------------------------$(tput sgr 0)"
-    echo "$(tput setaf 6)lalalalala this is a cheaply made script feel free to modify it if something is wrong kek"
-    echo "please make sure you've installed adb on your linux system."
-    echo "search on google how to do that."
-    echo "com.coloros.weather.service will not be debloated to prevent realme UI 2.0 user from softlocking their phone."
-    echo "com.oppo.ota and com.oppo.otaui will also be excluded to make sure you can still receive ota."
-    echo "happy debloating$(tput sgr 0)"
-    echo "$(tput setaf 2)-----------------------------------------------------------------------------------------------------------$(tput sgr 0)"
+    echo "$(tput setaf 2)*************************************************************$(tput sgr 0)"
+    tput setaf 6
+    echo "  realme UI debloater     |       only for realme UI 1 / 2"
+    tput sgr 0
+    echo "$(tput setaf 2)*************************************************************$(tput sgr 0)"
     echo "$(tput setaf 7; tput bold)1 - light debloat"
     echo "2 - full debloat (not including gapps)"
     echo "3 - Google apps debloat"
@@ -259,41 +344,41 @@ mainmenu () {
     echo "5 - check if adb is working"
     echo "6 - kill adb daemon"
     echo "7 - custom package"
-    echo "8 - exit$(tput sgr 0)"
+    echo "8 - view debloat package"
+    echo "9 - exit$(tput sgr 0)"
     
-    read -p "Type 1, 2, 3, 4, 5, 6, 7 or 8 then press ENTER: " mode
-    if [[ $mode == 1 ]]
+    read -p "Enter your choice: " mode
+    if [ "$mode" == "1" ]
     then
         light
-    elif [[ $mode == 2 ]]
+    elif [ "$mode" == "2" ]
     then
         super
-    elif [[ $mode == 3 ]]
+    elif [ "$mode" == "3" ]
     then
         gapps
-    elif [[ $mode == 4 ]]
+    elif [ "$mode" == "4" ]
     then
         rebloat
-    elif [[ $mode == 5 ]]
+    elif [ "$mode" == "5" ]
     then
         checkadb
-    elif [[ $mode == 6 ]]
+    elif [ "$mode" == "6" ]
     then
         killadb
-    elif [[ $mode == 7 ]]
+    elif [ "$mode" == "7" ]
     then
         clear
         custom
-    elif [[ $mode == 8 ]]
+    elif [ "$mode" == "8" ]
     then
         clear
-        exit
-    elif [[ $mode == "test" ]]
+        showmenu
+    elif [ "$mode" == "9" ]
     then
-        sleeptimer=20
-        echo "Sleep timer set to 20s"
-        sleep 1.5s
-        mainmenu
+        clear
+        echo "bye"
+        exit
     else
         echo "$(tput setaf 1; tput bold)Enter a valid input."
         echo "Returning to menu in 3 seconds.$(tput sgr 0)"

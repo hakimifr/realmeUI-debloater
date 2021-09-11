@@ -42,3 +42,9 @@
 - switched to quoting instead of using double [[ ]]
 - removed app market and theme store from package list as they won't work anyway
 
+## September 11 2021
+**Linux**
+- removed a few packages
+- main menu changes
+- added view package that will be debloated
+
