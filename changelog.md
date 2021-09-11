@@ -20,6 +20,7 @@
 ## August 28 2021 - Version 2.2
 **no new version will be released after this, please download from the repo directly.**
 **new changes will be recorded in this file instead.**
+
 **Linux**
 - Added custom mode
 - Fixed "unary operator expected" and "too many arguements"
