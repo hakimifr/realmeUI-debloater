@@ -18,8 +18,6 @@
 - No
 
 ## August 28 2021 - Version 2.2
-**no new version will be released after this, please download from the repo directly.**
-**new changes will be recorded in this file instead.**
 
 **Linux**
 - Added custom mode
@@ -28,7 +26,7 @@
 - Fixed light debloat issue caused by # (this is pretty important lmao, i found out that it did not debloat most package because of this)
 - Some code cleanup
 - Added disable-user theme store and app market for light debloat mode
-- Added -h and -i arguements
+- Added -h and -i arguements (Update: this is now removed due to how useless that thing is lol k)
 
 **Windows**
 - Migrated to for loops
