@@ -1,4 +1,2 @@
-gapps-debloat.log
-light-debloat.log
-rebloat.log
-full-debloat.log
+*.log
+tmp/
