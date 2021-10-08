@@ -48,3 +48,6 @@
 - main menu changes
 - added view package that will be debloated
 
+## October 8 2021
+**Linux**
+- code improvement
