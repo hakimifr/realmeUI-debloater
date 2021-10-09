@@ -6,8 +6,9 @@
 # maybe i should separate them and then use source / . .
 # i think i'll do that *later*
 
-readonly ghlink="https://github.com/Hakimi0804/realmeUI-debloater/packagelist"
+readonly ghlink="https://raw.githubusercontent.com/Hakimi0804/realmeUI-debloater/main/packagelist"
 fetch() {
+    echo "fetching package list"
     curl -s "$ghlink"/gapps.txt -o gapps.txt
     curl -s "$ghlink"/coloros.txt -o coloros.txt
 }
