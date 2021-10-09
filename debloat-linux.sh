@@ -16,6 +16,11 @@ fetch() {
 if [ ! -f gapps.txt ] || [ ! -f coloros.txt ]; then
     fetch
 fi
+case $1 in
+-r|--refresh)
+    fetch
+    ;;
+esac
 
 gapps_list="$(cat gapps.txt)"
 coloros_bloat="$(cat coloros.txt)"
