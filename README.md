@@ -11,14 +11,14 @@ Or, download it with this command: `wget https://github.com/Hakimi0804/realmeUI-
 
 How do I use it?
 - Setting up platform-tools:
-  1. Do a Google search on how to set up adb and fastboot for your linux distro.
+  1. Do a Google search on how to set up adb for your linux distro.
      For example:
      
      Fedora: `sudo dnf install android-tools`
          
-     Ubuntu: `sudo apt install adb fastboot`
+     Ubuntu: `sudo apt install adb`
      
-     *(Side Note: For Ubuntu, this might install a slightly outdated version of adb and fastboot. use [this installer](https://github.com/Hakimi0804/realmeUI-debloater/releases/download/v1.0/ubuntu-adb-setup.sh) to install latest version. This is usually not needed though.)*
+     *Note: For Ubuntu, this might install a slightly outdated version of adb and fastboot. use [this installer](https://github.com/Hakimi0804/realmeUI-debloater/releases/download/v1.0/ubuntu-adb-setup.sh) to install latest version. This is usually not needed though.*
   2. Enable USB debugging, this phone setting can be found in developer options.
   3. Connect the phone to your PC.
   4. Launch terminal and enter this command: `adb devices` (Check your phone, there should be a prompt asking you to grant USB debugging. Tick always allow and press allow.)
@@ -49,7 +49,8 @@ How do I use it?
 
 
 ## Side Notes
-- well ok i added script for linux user heh
+- well ok i added script for linux user
+- Windows script isn't maintained actively, the package list may be outdated
 - pardon me if i suck at scripting ok
 - i did this just for fun lol
 - readme.md fixed by [raymond](https://raymond-1227.github.io/) and ok bye
