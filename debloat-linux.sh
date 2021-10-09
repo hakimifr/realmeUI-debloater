@@ -6,15 +6,15 @@
 # maybe i should separate them and then use source / . .
 # i think i'll do that *later*
 
-# readonly ghlink="https://github.com/Hakimi0804/realmeUI-debloater/packagelist"
-# fetch() {
-#     curl -s "$ghlink"/gapps.txt -o gapps.txt
-#     curl -s "$ghlink"/coloros.txt -o coloros.txt
-# }
+readonly ghlink="https://github.com/Hakimi0804/realmeUI-debloater/packagelist"
+fetch() {
+    curl -s "$ghlink"/gapps.txt -o gapps.txt
+    curl -s "$ghlink"/coloros.txt -o coloros.txt
+}
 
-# if [ ! -f gapps.txt ] || [ ! -f coloros.txt ]; then
-#     fetch
-# fi
+if [ ! -f gapps.txt ] || [ ! -f coloros.txt ]; then
+    fetch
+fi
 
 gapps_list="$(cat gapps.txt)"
 coloros_bloat="$(cat coloros.txt)"
