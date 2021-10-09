@@ -3,10 +3,6 @@
 # shellcheck disable=SC2162
 # shellcheck disable=SC1091
 
-# well if this script look messy, that's because it is.
-# maybe i should separate them and then use source / . .
-# i think i'll do that *later*
-
 readonly ghlink="https://raw.githubusercontent.com/Hakimi0804/realmeUI-debloater/main"
 fetch-plist() {
     echo "fetching package list"
