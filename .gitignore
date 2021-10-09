@@ -1,2 +1,6 @@
 *.log
 tmp/
+gapps.txt
+coloros.txt
+!packagelist/gapps.txt
+!packagelist/coloros.txt
