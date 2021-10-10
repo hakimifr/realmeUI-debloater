@@ -29,7 +29,7 @@ fetch-utils() {
 if [ ! -f gapps.txt ] || [ ! -f coloros.txt ]; then
     fetch-plist
 fi
-if [ ! -f linux-utils/bloat.sh ] || [ ! -f linux-utils/misc.sh ]; then
+if [ ! -f bloat.sh ] || [ ! -f misc.sh ]; then
     fetch-utils
 fi
 
@@ -40,8 +40,8 @@ case $1 in
     ;;
 esac
 
-source linux-utils/bloat.sh
-source linux-utils/misc.sh
+source bloat.sh
+source misc.sh
 gapps_list="$(cat gapps.txt)"
 coloros_bloat="$(cat coloros.txt)"
 
