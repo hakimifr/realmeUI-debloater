@@ -4,12 +4,22 @@
 # shellcheck disable=SC1091
 
 readonly ghlink="https://raw.githubusercontent.com/Hakimi0804/realmeUI-debloater/main"
+checkcon() {
+    echo "checking connection"
+    if ! ping -c 3 google.com >/dev/null 2>&1; then
+        echo "no internet connection!"
+        echo "cannot fetch package list and utility."
+        exit 1
+    fi
+}
 fetch-plist() {
+    checkcon
     echo "fetching package list"
     curl -s "$ghlink"/packagelist/gapps.txt -o gapps.txt
     curl -s "$ghlink"/packagelist/coloros.txt -o coloros.txt
 }
 fetch-utils() {
+    checkcon
     echo "fetching utils"
     mkdir -p linux-utils
     curl -s "$ghlink"/linux-utils/bloat.sh -o bloat.sh
