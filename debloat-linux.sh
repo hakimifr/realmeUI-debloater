@@ -12,8 +12,8 @@ fetch-plist() {
 fetch-utils() {
     echo "fetching utils"
     mkdir -p linux-utils
-    curl -s "$ghlink"/linux-utils/bloat.sh -o linux-utils/bloat.sh
-    curl -s "$ghlink"/linux-utils/misc.sh -o linux-utils/misc.sh
+    curl -s "$ghlink"/linux-utils/bloat.sh -o bloat.sh
+    curl -s "$ghlink"/linux-utils/misc.sh -o misc.sh
 }
 
 if [ ! -f gapps.txt ] || [ ! -f coloros.txt ]; then

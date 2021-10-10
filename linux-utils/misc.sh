@@ -1,5 +1,6 @@
 #!/bin/false
 # shellcheck shell=bash
+
 checkadb() {
     clear
     tput setaf 2; adb devices; tput sgr 0
@@ -15,6 +16,7 @@ checkadb() {
         mainmenu
     fi
 }
+
 donedebloat() {
     clear
     echo "$(tput setaf 2; tput bold)done!"
@@ -30,12 +32,14 @@ donedebloat() {
         mainmenu
     fi
 }
+
 killadb() {
     clear
     echo "Killing"
     adb kill-server
     donedebloat
 }
+
 confirmation() {
     # $1 - gapps_list/coloros_bloat
     # light/null (super)

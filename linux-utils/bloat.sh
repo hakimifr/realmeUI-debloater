@@ -1,5 +1,6 @@
 #!/bin/false
 # shellcheck shell=bash
+
 markettheme() {
     clear
     echo "$(tput bold)removing app market and theme store ...$(tput sgr 0)"
@@ -7,6 +8,7 @@ markettheme() {
     adb shell pm disable-user com.heytap.themestore
     donedebloat
 }
+
 super() {
     if [ -e "full-debloat.log" ]; then
     rm full-debloat.log
@@ -28,6 +30,7 @@ super() {
     done
     markettheme
 }
+
 light() {
     if [ -e "light-debloat.log" ]; then
     rm light-debloat.log
@@ -49,6 +52,7 @@ light() {
         clear
     done
 }
+
 gapps() {
     if [ -e "gapps-debloat.log" ]; then
     rm gapps-debloat.log
@@ -67,6 +71,7 @@ gapps() {
     done
     markettheme
 }
+
 rebloat() {
     if [ -e "rebloat.log" ]; then
     rm rebloat.log
@@ -88,6 +93,7 @@ rebloat() {
     clear
     donedebloat
 }
+
 custom() {
     clear
     read -p "Enter package name (type exit to go back to the menu): " customprompt
