@@ -3,7 +3,7 @@
 
 markettheme() {
     clear
-    echo "$(tput bold)removing app market and theme store ...$(tput sgr 0)"
+    echo "${bold_white}removing app market and theme store ...${reset}"
     adb shell pm disable-user com.heytap.market
     adb shell pm disable-user com.heytap.themestore
     donedebloat
@@ -22,7 +22,7 @@ super() {
         if [ "$app" = "#END_LIGHT" ]; then
             continue
         fi
-        echo "$(tput bold)removing $app ...$(tput sgr 0)"
+        echo "${bold_white}removing $app ...${reset}"
         echo "removing $app" >> full-debloat.log
         echo "$(adb shell pm uninstall -k --user 0 $app)" >> full-debloat.log
         echo "" >> full-debloat.log
@@ -45,7 +45,7 @@ light() {
             markettheme
             break
         fi
-        echo "$(tput bold)removing $app ...$(tput sgr 0)"
+        echo "${bold_white}removing $app ...${reset}"
         echo "removing $app" >> light-debloat.log
         echo "$(adb shell pm uninstall -k --user 0 $app)" >> light-debloat.log
         echo >> light-debloat.log
@@ -63,7 +63,7 @@ gapps() {
     
     for app in $gapps_list
     do
-        echo "$(tput bold)removing $app ...$(tput sgr 0)"
+        echo "${bold_white}removing $app ...${reset}"
         echo "removing $app" >> gapps-debloat.log
         echo "$(adb shell pm uninstall -k --user 0 $app)" >> gapps-debloat.log
         echo "" >> gapps-debloat.log
@@ -79,13 +79,13 @@ rebloat() {
     clear
     for app in $coloros_bloat $gapps_list
     do
-        echo "$(tput bold)installing $app ...$(tput sgr 0)"
+        echo "${bold_white}installing $app ...${reset}"
         echo "installing $app" >> rebloat.log
         echo "$(adb shell cmd package install-existing --user 0 $app)" >> rebloat.log
         echo "" >> rebloat.log
         clear
     done
-    echo "$(tput bold)enabling app market and theme store$(tput sgr 0)"
+    echo "${bold_white}enabling app market and theme store${reset}"
     echo "enabling app market and theme store" >> rebloat.log
     adb shell pm enable com.heytap.market
     adb shell pm enable com.heytap.themestore 

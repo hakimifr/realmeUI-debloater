@@ -15,15 +15,16 @@ checkcon() {
 fetch-plist() {
     checkcon
     echo "fetching package list"
-    curl -s "$ghlink"/packagelist/gapps.txt -o gapps.txt
-    curl -s "$ghlink"/packagelist/coloros.txt -o coloros.txt
+    curl -s "$ghlink/packagelist/gapps.txt -o gapps.txt"
+    curl -s "$ghlink/packagelist/coloros.txt -o coloros.txt"
 }
 fetch-utils() {
     checkcon
     echo "fetching utils"
     mkdir -p linux-utils
-    curl -s "$ghlink"/linux-utils/bloat.sh -o bloat.sh
-    curl -s "$ghlink"/linux-utils/misc.sh -o misc.sh
+    curl -s "$ghlink/linux-utils/bloat.sh -o bloat.sh"
+    curl -s "$ghlink/linux-utils/misc.sh -o misc.sh"
+    curl -s "$ghlink/linux-utils/colours.sh -o colours.sh"
 }
 
 if [ ! -f gapps.txt ] || [ ! -f coloros.txt ]; then
@@ -40,22 +41,28 @@ case $1 in
     ;;
 esac
 
+# shelcheck source=linux-utils/colours.sh
+# shellcheck source=linux-utils/bloat.sh
+# shellcheck source=linux-utils/misc.sh
 source bloat.sh
 source misc.sh
+source colours.sh
 gapps_list="$(cat gapps.txt)"
 coloros_bloat="$(cat coloros.txt)"
 
 mainmenu() {
     clear
     mode=0
-    echo "$(tput setaf 2)*************************************************************$(tput sgr 0)"
+    echo "${bold_cyan}***********************************************************${cyan}"
     tput setaf 6
-    echo "  realme UI debloater     |       only for realme UI 1 / 2"
-    echo "  all package are tested, and should not cause issues when"
-    echo "  debloated."
-    echo "  that being said, I AM NOT RESPONSIBLE FOR ANY DAMAGE."
+    echo "
+                realme UI 1/2 debloater
+                   by Hakimi0804
+I am not responsible for any damage done to your device.    
+    "
     tput sgr 0
-    echo "$(tput setaf 2)*************************************************************$(tput sgr 0)"
+    echo "${bold_cyan}***********************************************************${bold_white}"
+    echo
     echo "$(tput setaf 7; tput bold)1 - light debloat"
     echo "2 - full debloat (not including gapps)"
     echo "3 - Google apps debloat"
@@ -65,7 +72,7 @@ mainmenu() {
     echo "7 - custom package"
     echo "8 - exit$(tput sgr 0)"
     
-    read -p "Enter your choice: " mode
+    read -p "${reset}Enter your choice: " mode
     
     case $mode in
     1)

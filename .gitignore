@@ -6,5 +6,7 @@ coloros.txt
 !packagelist/coloros.txt
 misc.sh
 bloat.sh
+colours.sh
 !linux-utils/misc.sh
 !linux-utils/bloat.sh
+!linux-utils/colours.sh

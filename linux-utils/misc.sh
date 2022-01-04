@@ -3,7 +3,7 @@
 
 checkadb() {
     clear
-    tput setaf 2; adb devices; tput sgr 0
+    echo -n "${bold_green}"; adb devices; echo -n "${reset}"
     echo 1 - "return to menu"
     echo 2 - "exit"
     read -p "Type 1, or 2 then press ENTER: " donecheck
@@ -19,7 +19,7 @@ checkadb() {
 
 donedebloat() {
     clear
-    echo "$(tput setaf 2; tput bold)done!"
+    echo "${bold_green}done!"
     echo "1 - return to menu"
     echo "2 - exit$(tput sgr 0)"
     read -p "Type 1, or 2 then press ENTER: " donedebloatprompt
@@ -43,17 +43,22 @@ killadb() {
 confirmation() {
     # $1 - gapps_list/coloros_bloat
     # light/null (super)
-    echo "the following package will be removed:"
+    echo "${bold_white}the following package will be ${bold_red}removed:${reset}"
+    echo
     for package in $1; do
         if [ "$2" = "light" ]; then
             if [ "$package" = "#END_LIGHT" ]; then
                 break
             fi
+        else
+            if [ "$package" = "#END_LIGHT" ]; then
+                continue
+            fi
         fi
-        printf "%s  " "$package"
+        echo "$package"
     done
     echo
-    read -p "continue?: " conf
+    read -p "continue? (y/n): " conf
     if [ "$conf" != "y" ]; then
         mainmenu
     fi
